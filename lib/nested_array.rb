@@ -1,45 +1,149 @@
-# Examples inspired by U. S. National Organic Standards
-
-ORGANIC_PRODUCE = [
-  "Strawberries",
-  "Potatoes",
-  "Grapes",
-  "Avocadoes",
-  "Asparagus"
-]
-
-CONVENTIONAL_PRODUCE = [
-  "Grapefruit",
-  "Pineapple",
-  "Oranges",
-  "Watermelon",
-  "Eggplant"
-]
-
-def assembled_matrix
-  array = [CONVENTIONAL_PRODUCE, ORGANIC_PRODUCE]
-  # Build an array that contains both of the above arrays
-  # This matrix will represent a produce storage room
-  # Organic standards require that organic products be stored ABOVE conventional, not the other way around
-  # Make sure conventional produce is first, on the 'zeroth' / 'bottom' shelf
+def hopper
+	programmer_hash = 
+ 		{
+      :grace_hopper => {
+        :known_for => "COBOL",
+        :languages => ["COBOL", "FORTRAN"]
+      },
+      :alan_kay => {
+        :known_for => "Object Orientation",
+        :languages => ["Smalltalk", "LISP"]
+      },
+      :dennis_ritchie => {
+        :known_for => "Unix",
+        :languages => ["C"]
+      }
+    }
+programmer_hash[:grace_hopper]
 end
 
-def sorted_matrix
-  array = [CONVENTIONAL_PRODUCE.sort, ORGANIC_PRODUCE.sort]
-  # Using Array literal syntax only, build another nested array that 
-  # uses the arrays of conventional and organic produce as before.
-  # However, this time, sort each internal array alphabetically by the first character
+def alan_kay_is_known_for
+	# What combination of keys would you use to return the value of the :known_for key of :alan_kay?
+	
+	programmer_hash = 
+ 		{
+      :grace_hopper => {
+        :known_for => "COBOL",
+        :languages => ["COBOL", "FORTRAN"]
+      },
+      :alan_kay => {
+        :known_for => "Object Orientation",
+        :languages => ["Smalltalk", "LISP"]
+      },
+      :dennis_ritchie => {
+        :known_for => "Unix",
+        :languages => ["C"]
+      }
+    }
+programmer_hash[:alan_kay][:known_for]
 end
 
-def matrix_lookup(matrix, row, column)
-  matrix[row][column]
+def dennis_ritchies_language
+	programmer_hash = 
+ 		{
+      :grace_hopper => {
+        :known_for => "COBOL",
+        :languages => ["COBOL", "FORTRAN"]
+      },
+      :alan_kay => {
+        :known_for => "Object Orientation",
+        :languages => ["Smalltalk", "LISP"]
+      },
+      :dennis_ritchie => {
+        :known_for => "Unix",
+        :languages => ["C"]
+      }
+    }
+		
+programmer_hash[:dennis_ritchie][:languages][0]
 end
 
-def matrix_update(matrix, row, column, new_value)
-  # Given any matrix (array of arrays), a row index and a column index, 
-  # Update the matrix location at that row and column to have the value of new_value
-  # Return the updated matrix
-  matrix[row][column] = new_value
-  matrix
+def adding_matz
+  programmer_hash =
+ 		{
+        :grace_hopper => {
+          :known_for => "COBOL",
+          :languages => ["COBOL", "FORTRAN"]
+        },
+        :alan_kay => {
+          :known_for => "Object Orientation",
+          :languages => ["Smalltalk", "LISP"]
+        },
+        :dennis_ritchie => {
+          :known_for => "Unix",
+          :languages => ["C"]
+        }
+     }
+     
+    new_programmer_hash = programmer_hash
+		 new_programmer_hash = {
+			 	 :yukihiro_matsumoto => {
+					 :known_for => "Ruby",
+					 :languages => ["LISP","C"]
+				 },
+:grace_hopper => {
+           :known_for => "COBOL",
+           :languages => ["COBOL", "FORTRAN"]
+         },
+         :alan_kay => {
+           :known_for => "Object Orientation",
+           :languages => ["Smalltalk", "LISP"]
+         },
+         :dennis_ritchie => {
+           :known_for => "Unix",
+           :languages => ["C"]
+         }
+      }
+  
+
+new_programmer_hash
+end
+
+
+def changing_alan
+  programmer_hash =
+ 		{
+        :grace_hopper => {
+          :known_for => "COBOL",
+          :languages => ["COBOL", "FORTRAN"]
+        },
+        :alan_kay => {
+          :known_for => "Object Orientation",
+          :languages => ["Smalltalk", "LISP"]
+        },
+        :dennis_ritchie => {
+          :known_for => "Unix",
+          :languages => ["C"]
+        }
+     },
+  
+  alans_new_info = "GUI"
+		 programmer_hash[:alan_kay][:known_for] = alans_new_info
+		 programmer_hash
+end
+
+
+def adding_to_dennis
+  # add "Assembly" to Dennis Ritchie's languages array
+  # return the entire updated hash
+
+	programmer_hash = 
+ 		{
+      :grace_hopper => {
+        :known_for => "COBOL",
+        :languages => ["COBOL", "FORTRAN"]
+      },
+      :alan_kay => {
+        :known_for => "Object Orientation",
+        :languages => ["Smalltalk", "LISP"]
+      },
+      :dennis_ritchie => {
+        :known_for => "Unix",
+        :languages => ["C"]
+      }
+    }
+programmer_hash[:dennis_ritchie][:languages][1] = "Assembly"
+
+return programmer_hash
 end
 
